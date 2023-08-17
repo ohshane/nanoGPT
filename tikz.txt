@@ -1,0 +1,20 @@
+https://stackoverflow.com/questions/32682748/tikz-in-ipython-notebook-no-drawing-created-instead-get-message-no-image-gen
+
+It turns out that tikzmagic needs the ImageMagick and pdf2svg packages, which were not installed on my newer laptop. After installing them, tikzmagic works fine in my jupyter notebooks. The tikzmagic author, who was very responsive (see github issue), has updated the README on github to mention these dependencies.
+
+In case it's helpful, here are the detailed steps I took:
+
+Install homebrew:
+
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+Install ImageMagick:
+
+brew install ImageMagick
+Install poppler (a dependency of pdf2svg):
+
+brew install poppler
+Install pdf2svg:
+
+brew install pdf2svg
+
+pip install git+https://github.com/mkrphys/ipython-tikzmagic.git
